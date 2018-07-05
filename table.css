@@ -1,0 +1,2 @@
+th.table-sorted-asc:before { content: '\2191'; }
+th.table-sorted-desc:before { content: '\2193'; }
