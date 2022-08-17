@@ -53,7 +53,7 @@ var Sort = (function(){
 	sort.numeric_converter = function(separator) {
 		return function(val) {
 			if (typeof(val)=="string") {
-				val = parseFloat(val.replace(/^[^\d\.]*([\d., ]+).*/g,"$1").replace(new RegExp("[^\\\d"+separator+"]","g"),'').replace(/,/,'.')) || 0;
+				val = parseFloat(val.replace(/^[^-\d\.](-?[\d., ]+)./g, "$1").replace(new RegExp("[^-\\\d" + separator + "]", "g"), '').replace(/,/, '.')) || 0;
 			}
 			return val || 0;
 		};
